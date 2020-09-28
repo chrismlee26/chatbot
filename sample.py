@@ -5,35 +5,38 @@
 from random import choice
 
 #combine functions and conditionals to get a response from the bot
-def food_suggestion_bot_response(user_response):
+def get_mood_bot_response(user_response):
 
-  bot_response_chinese = ["Hotpot", "Hong Kong Cafe", "Noodle Soup", "Sichuan Spicy Food", "Skewers"]
-  bot_response_japanese = ["im here for you", "sending good vibes", "Ok is fine"]
-  bot_response_korean = ["food", "text", "things", "bugolgi"]
+  #add some bot responses to this list
+  bot_response_happy = ["omg! great!", "Keep smiling!", "I love to see you happy!"]
+  bot_response_sad = ["im here for you", "sending good vibes", "Ok is fine"]
 
-  if user_response == "chinese":
-    return choice(bot_response_chinese)
-  elif user_response == "japanese":
-    return choice(bot_response_japanese)
-  elif user_response == "korean":
-    return choice(bot_response_korean)  
+  if user_response == "happy":
+    return choice(bot_response_happy)
+  elif user_response == "sad":
+    return choice(bot_response_sad)
+  elif user_response == "ok":
+    return choice(bot_response_sad)  
   else:
-    return "Those aren't asian foods"
+    return "I hope your day gets better"
 
-print("Hello world, I am the Chinese Food Suggeston Bot")
-print("What season is it?")
+
+
+
+print("Welcome to Mood Bot")
+print("Please enter how you are feeling")
 
 user_response = ""
 #TODO: we want to keep repeating until the user enters "done" what should we put here?
 while True:
-  user_response = input("What cuisine you want to eat? ")
+  user_response = input("How are you feeling today?: ")
   
   # Quits program when user responds with 'done'
   if user_response == 'done':
     break
 
   
-  bot_response = food_suggestion_bot_response(user_response)
+  bot_response = get_mood_bot_response(user_response)
   print(bot_response)
 
 
