@@ -7,26 +7,25 @@ from random import choice
 #combine functions and conditionals to get a response from the bot
 def food_suggestion_bot_response(user_response):
 
-  bot_response_chinese = ["Hotpot", "Hong Kong Cafe", "Noodle Soup", "Sichuan Spicy Food", "Skewers"]
-  bot_response_japanese = ["im here for you", "sending good vibes", "Ok is fine"]
-  bot_response_korean = ["food", "text", "things", "bugolgi"]
+  bot_response_chinese_1 = ["Taiwanese Solo Hotpot", "Fried Rice", "Noodle Soup", "Dumplings", "Hong Kong Cafe"]
+  bot_response_chinese_2 = ["Shanghainese Dumplings", "Spicy Hotpot", "BBQ Skewers", "Sichuan Spicy Food"]
+  bot_response_chinese_3 = ["Seafood Hotpot", "Cantonese Banquet", "Peking Duck", "Cream Lobster"]
 
-  if user_response == "chinese":
-    return choice(bot_response_chinese)
-  elif user_response == "japanese":
-    return choice(bot_response_japanese)
-  elif user_response == "korean":
-    return choice(bot_response_korean)  
+  if int(user_response) >= 1 and int(user_response) <= 2:
+    return choice(bot_response_chinese_1)
+  elif int(user_response) >= 3 and int(user_response) <= 5:
+    return choice(bot_response_chinese_2)
+  elif int(user_response) >= 6 and int(user_response) <= 10:
+    return choice(bot_response_chinese_3)  
   else:
-    return "Those aren't asian foods"
+    return "That's a lot of people you probably need a reso"
 
-print("Hello world, I am the Chinese Food Suggeston Bot")
-print("What season is it?")
+print("Hello, I am the Chinese Food Suggeston Bot")
 
-user_response = ""
+user_response = ()
 #TODO: we want to keep repeating until the user enters "done" what should we put here?
 while True:
-  user_response = input("What cuisine you want to eat? ")
+  user_response = input("How many people?")
   
   # Quits program when user responds with 'done'
   if user_response == 'done':
@@ -35,10 +34,6 @@ while True:
   
   bot_response = food_suggestion_bot_response(user_response)
   print(bot_response)
-
-
-
-
 
 
 
@@ -65,3 +60,29 @@ while True:
 
 # Use a while() loop to keep running your chat bot until the user enters "done".
 
+
+
+
+#   if int(user_response) <= 2:
+#     return choice(bot_response_chinese_1)
+#   elif int(user_response) == 3 and int(user_response) <= 5:
+#     return choice(bot_response_chinese_2)
+#   elif int(user_response) == 6 and int(user_response) <= 10:
+#     return choice(bot_response_chinese_3)  
+#   else:
+#     return "That's a lot of people you probably need a reso"
+
+# print("Hello, I am the Chinese Food Suggeston Bot")
+
+# user_response = ()
+# #TODO: we want to keep repeating until the user enters "done" what should we put here?
+# while True:
+#   user_response = input("How many people?")
+  
+#   # Quits program when user responds with 'done'
+#   if user_response == 'done':
+#     break
+
+  
+#   bot_response = food_suggestion_bot_response(user_response)
+#   print(bot_response)
