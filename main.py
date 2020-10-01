@@ -2,8 +2,8 @@ from random import choice
 
 def food_suggestion_bot_response(user_response):
 
-  bot_response_chinese_1 = ["Taiwanese Solo Hotpot", "Fried Rice", "Noodle Soup", "Dumplings", "Hong Kong Cafe"]
-  bot_response_chinese_2 = ["Juicy Shanghainese Dumplings", "Spicy Hotpot", "BBQ Skewers", "Sichuan Spicy Food", "Spicy Pickle Fish"]
+  bot_response_chinese_1 = ["Taiwanese Solo Hotpot", "Fried Rice", "Noodle Soup", "Dumplings", "Hong Kong Cafe", "Congee with Donuts"]
+  bot_response_chinese_2 = ["Juicy Shanghainese Dumplings", "Spicy Hotpot", "BBQ Skewers", "Dimsum", "Spicy Pickle Fish"]
   bot_response_chinese_3 = ["Seafood Hotpot", "Cantonese Banquet", "Peking Duck", "Cream Lobster with Noodles", "Chaozhou Late Night"]
 
   if int(user_response) >= 1 and int(user_response) <= 2:
@@ -15,7 +15,7 @@ def food_suggestion_bot_response(user_response):
   else:
     return "Might be too many people for one table"
 
-print("Hello, I am the Chinese Food Suggeston Bot")
+print("Hello, I am the Chinese Food Suggeston ChatBot")
 print("I randomly suggest Chinese food based on your party size.")
 print("Please enter a numerical response.")
 print("Type \"done\" to quit.")
